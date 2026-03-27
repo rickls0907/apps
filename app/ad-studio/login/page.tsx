@@ -19,7 +19,7 @@ export default function LoginPage() {
     })
     const data = await res.json()
     if (data.ok) {
-      router.push('/clients')
+      router.push('/ad-studio/clients')
     } else {
       setError('Incorrect password')
       setLoading(false)

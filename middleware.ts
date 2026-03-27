@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const PUBLIC_PATHS = ['/login', '/review', '/api/auth', '/api/feedback', '/api/client-context']
+const PUBLIC_PATHS = ['/login', '/ad-studio/login', '/ad-studio/review', '/api/auth', '/api/feedback', '/api/client-context', '/api/review']
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl
@@ -17,7 +17,7 @@ export function middleware(req: NextRequest) {
 
   const auth = req.cookies.get('as_auth')?.value
   if (auth !== process.env.DASHBOARD_PASS) {
-    return NextResponse.redirect(new URL('/login', req.url))
+    return NextResponse.redirect(new URL('/ad-studio/login', req.url))
   }
 
   return NextResponse.next()

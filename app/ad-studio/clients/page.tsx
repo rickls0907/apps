@@ -46,18 +46,18 @@ export default async function ClientsPage() {
       <div className="max-w-5xl mx-auto px-6 py-8">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-2xl font-bold">Clients</h1>
-          <Link href="/clients/new" className="btn btn-blue">+ New Client</Link>
+          <Link href="/ad-studio/clients/new" className="btn btn-blue">+ New Client</Link>
         </div>
 
         {clients.length === 0 ? (
           <div className="card text-center py-16">
             <p className="text-gray-500 mb-4">No clients yet.</p>
-            <Link href="/clients/new" className="btn btn-blue">+ New Client</Link>
+            <Link href="/ad-studio/clients/new" className="btn btn-blue">+ New Client</Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {clients.map(c => (
-              <Link key={c.id} href={`/clients/${c.id}`} className="card hover:border-blue-600 transition-colors block">
+              <Link key={c.id} href={`/ad-studio/clients/${c.id}`} className="card hover:border-blue-600 transition-colors block">
                 <h3 className="font-semibold text-white mb-2">{c.name}</h3>
                 <div className="flex gap-3 text-sm text-gray-500 mb-3 flex-wrap">
                   <span>{c.campaign_count} campaign{c.campaign_count !== 1 ? 's' : ''}</span>

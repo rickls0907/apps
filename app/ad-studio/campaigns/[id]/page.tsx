@@ -176,9 +176,9 @@ export default function CampaignPage() {
     <div className="min-h-screen bg-bg">
       <nav className="nav-bar">
         <div className="flex items-center gap-2 text-sm">
-          <Link href="/clients" className="text-gray-500 hover:text-gray-300">Ad Studio</Link>
+          <Link href="/ad-studio/clients" className="text-gray-500 hover:text-gray-300">Ad Studio</Link>
           <span className="text-gray-700">/</span>
-          <Link href={`/clients/${campaign.client_id}`} className="text-gray-500 hover:text-gray-300">{campaign.client_name}</Link>
+          <Link href={`/ad-studio/clients/${campaign.client_id}`} className="text-gray-500 hover:text-gray-300">{campaign.client_name}</Link>
           <span className="text-gray-700">/</span>
           <span className="text-white font-semibold">{campaign.name}</span>
         </div>

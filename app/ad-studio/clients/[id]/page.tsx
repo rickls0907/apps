@@ -77,7 +77,7 @@ export default function ClientPage() {
       body: JSON.stringify({ client_id: id, ...campaignForm }),
     })
     const data = await res.json()
-    if (res.ok) router.push(`/campaigns/${data.id}`)
+    if (res.ok) router.push(`/ad-studio/campaigns/${data.id}`)
     else { setMsg(`Error: ${data.error}`); setSaving(false) }
   }
 
@@ -87,7 +87,7 @@ export default function ClientPage() {
     <div className="min-h-screen bg-bg">
       <nav className="nav-bar">
         <div className="flex items-center gap-2 text-sm">
-          <Link href="/clients" className="text-gray-500 hover:text-gray-300">Ad Studio</Link>
+          <Link href="/ad-studio/clients" className="text-gray-500 hover:text-gray-300">Ad Studio</Link>
           <span className="text-gray-700">/</span>
           <span className="text-white font-semibold">{client.name}</span>
         </div>
